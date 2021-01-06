@@ -7,9 +7,11 @@ operations to produce `n` number characters starting from 1.
 
 def minOperations(n):
 
-    if (n < 1):
+    # can't check == NaN
+    if (n < 0 or n == float('inf') or n == float('-inf')):
         return 0
 
+    # n == 1 returns 0 steps as it is the starting state
     minOps = 0
 
     # within the potential factors of n, aside from 1
