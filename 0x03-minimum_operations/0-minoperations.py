@@ -7,6 +7,9 @@ operations to produce `n` number characters starting from 1.
 
 def minOperations(n):
 
+    if (type(n) != int and type(n) != float):
+        return 0
+
     # can't check == NaN
     if (n < 0 or n == float('inf') or n == float('-inf')):
         return 0
