@@ -7,14 +7,13 @@ operations to produce `n` number characters starting from 1.
 
 def minOperations(n):
 
-    if (type(n) != int and type(n) != float):
-        return 0
-
-    # can't check == NaN
-    if (n < 0 or n == float('inf') or n == float('-inf')):
+    if (type(n) != int):
         return 0
 
     # n == 1 returns 0 steps as it is the starting state
+    if (n < 2):
+        return 0
+
     minOps = 0
 
     # within the potential factors of n, aside from 1
@@ -24,6 +23,6 @@ def minOperations(n):
             # add that to the total operations
             minOps += i
             # refocus to consider the remainder unprinted
-            n /= i
+            n //= i
 
     return minOps
