@@ -61,8 +61,12 @@ int is_palindrome(unsigned long n)
 	if (n < 10)
 		return (1);
 
-	/* stops at 10^20 for ULONG_MAX at 18446744073709551615 */
-	while (upper_p10 < 20 && n / pow10Recursion(upper_p10) > 10)
+	/*
+	 * In theory, power of 10 should stop at 10^19 for ULONG_MAX at
+	 * 18446744073709551615. But atol() as used in main will not return
+	 * values over LONG_MAX, 9223372036854775807, thus 10^18.
+	*/
+	while (upper_p10 < 18 && n / pow10Recursion(upper_p10) > 10)
 		upper_p10++;
 
 	if (upper_p10 % 2)
