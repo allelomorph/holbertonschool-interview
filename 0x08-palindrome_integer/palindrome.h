@@ -1,7 +1,7 @@
 #ifndef PALINDROME_H
 #define PALINDROME_H
 
-int is_palindrome(unsigned long n);
+int is_palindrome(unsigned long exp);
 int palindromeRecursion(unsigned long n,
 			unsigned int upper_p10, unsigned int lower_p10,
 			unsigned int mid);

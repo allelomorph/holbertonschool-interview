@@ -4,15 +4,15 @@
 /**
  * pow10Recursion - recurstively finds power of 10
  *
- * @e: exponent
- * Return: 10 ^ e
+ * @exp: exponent
+ * Return: 10^exp
  */
-unsigned long pow10Recursion(unsigned int e)
+unsigned long pow10Recursion(unsigned int exp)
 {
-	if (e == 0)
+	if (exp == 0)
 		return (1);
 	else
-		return (10 * pow10Recursion(e - 1));
+		return (10 * pow10Recursion(exp - 1));
 }
 
 
@@ -61,13 +61,9 @@ int is_palindrome(unsigned long n)
 	if (n < 10)
 		return (1);
 
-	/* stops at 10 ^ 20 for ULONG_MAX at 18446744073709551615 */
-	while (n / pow10Recursion(upper_p10) > 10)
-	{
+	/* stops at 10^20 for ULONG_MAX at 18446744073709551615 */
+	while (upper_p10 < 20 && n / pow10Recursion(upper_p10) > 10)
 		upper_p10++;
-		if (upper_p10 == 20)
-			break;
-	}
 
 	if (upper_p10 % 2)
 		mid = (upper_p10 + 1) / 2;
