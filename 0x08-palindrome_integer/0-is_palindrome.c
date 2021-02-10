@@ -18,34 +18,34 @@ unsigned long pow10Recursion(unsigned int exp)
 
 /**
  * palindromeRecursion - helper to is_palindrome, recursively compares
- * digits in an unsigned int
+ * digits in an unsigned int, from midpoint out to ends
  *
  * @n: number to check
- * @upper_p10: power of 10 at first position to compare
- * @lower_p10: power of 10 at second position to compare
- * @mid: power of 10 at midpoint of comparison
+ * @upper_p10: power of 10 at leftmost digit of n
+ * @left_p10: power of 10 at first position to compare
+ * @right_p10: power of 10 at second position to compare
  * Return: 1 if n is a palindrome, and 0 otherwise
  */
-int palindromeRecursion(unsigned long n,
-			unsigned int upper_p10, unsigned int lower_p10,
-			unsigned int mid)
+int palindromeRecursion(unsigned long n, unsigned int upper_p10,
+			unsigned int left_p10, unsigned int right_p10)
 {
-	unsigned int low, high;
+	unsigned int left, right;
 
-	high = (n / pow10Recursion(upper_p10)) % 10;
-	low = (n % pow10Recursion(lower_p10 + 1)) / pow10Recursion(lower_p10);
+	left = (n / pow10Recursion(left_p10)) % 10;
+	right = (n / pow10Recursion(right_p10)) % 10;
 
-	if (low == high)
+	if (left == right)
 	{
-		if (upper_p10 == mid)
+		if (left_p10 == upper_p10)
 			return (1);
 		else
-			return (palindromeRecursion(n, upper_p10 - 1,
-						    lower_p10 + 1, mid));
+			return (palindromeRecursion(n, upper_p10, left_p10 + 1,
+						    right_p10 - 1));
 	}
 
 	return (0);
 }
+
 
 /**
  * is_palindrome - checks whether or not a given unsigned integer is a
@@ -56,7 +56,7 @@ int palindromeRecursion(unsigned long n,
  */
 int is_palindrome(unsigned long n)
 {
-	unsigned int upper_p10 = 1, mid;
+	unsigned int upper_p10 = 1, left_p10, right_p10;
 
 	if (n < 10)
 		return (1);
@@ -69,10 +69,13 @@ int is_palindrome(unsigned long n)
 	while (upper_p10 < 18 && n / pow10Recursion(upper_p10) > 10)
 		upper_p10++;
 
-	if (upper_p10 % 2)
-		mid = (upper_p10 + 1) / 2;
-	else
-		mid = upper_p10 / 2;
+	if (upper_p10 % 2) /* odd number p_10, even number digits in n */
+	{
+		right_p10 = upper_p10 / 2;
+		left_p10 = right_p10 + 1;
+	}
+	else /* even number p_10, odd number digits in n */
+		left_p10 = right_p10 = upper_p10 / 2;
 
-	return (palindromeRecursion(n, upper_p10, 0, mid));
+	return (palindromeRecursion(n, upper_p10, left_p10, right_p10));
 }
