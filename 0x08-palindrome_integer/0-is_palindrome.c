@@ -2,7 +2,61 @@
 
 
 /**
- * pow10Recursion - recurstively finds power of 10
+ * pow10Lookup - finds powers of 10 up to 19 in lookup table for speed
+ *
+ * @exp: exponent
+ * Return: 10^exp
+ */
+unsigned long pow10Lookup(unsigned int exp)
+{
+	unsigned long pow10_table[19] = {
+		1u,
+		10u,
+		100u,
+		1000u,
+		10000u,
+		100000u,
+		1000000u,
+		10000000u,
+		100000000u,
+		1000000000u,
+		10000000000u,
+		100000000000u,
+		1000000000000u,
+		10000000000000u,
+		100000000000000u,
+		1000000000000000u,
+		10000000000000000u,
+		100000000000000000u,
+		1000000000000000000u
+	};
+
+	return (pow10_table[exp]);
+}
+
+
+/**
+ * _pow10 - finds power of 10
+ *
+ * @exp: exponent
+ * Return: 10^exp
+ */
+unsigned long _pow10(unsigned int exp)
+{
+	unsigned long pow_10 = 1;
+
+	while (exp)
+	{
+		pow_10 *= 10;
+		exp--;
+	}
+
+	return (pow_10);
+}
+
+
+/**
+ * pow10Recursion - recursively finds power of 10
  *
  * @exp: exponent
  * Return: 10^exp
@@ -31,8 +85,8 @@ int palindromeRecursion(unsigned long n, unsigned int upper_p10,
 {
 	unsigned int left, right;
 
-	left = (n / pow10Recursion(left_p10)) % 10;
-	right = (n / pow10Recursion(right_p10)) % 10;
+	left = (n / pow10Lookup(left_p10)) % 10;
+	right = (n / pow10Lookup(right_p10)) % 10;
 
 	if (left == right)
 	{
@@ -66,7 +120,7 @@ int is_palindrome(unsigned long n)
 	 * 18446744073709551615. But atol() as used in main will not return
 	 * values over LONG_MAX, 9223372036854775807, thus 10^18.
 	*/
-	while (upper_p10 < 18 && n / pow10Recursion(upper_p10) > 10)
+	while (upper_p10 < 18 && n / pow10Lookup(upper_p10) > 10)
 		upper_p10++;
 
 	if (upper_p10 % 2) /* odd number p_10, even number digits in n */
