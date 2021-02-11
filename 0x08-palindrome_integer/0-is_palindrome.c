@@ -9,7 +9,7 @@
  */
 unsigned long pow10Lookup(unsigned int exp)
 {
-	unsigned long pow10_table[19] = {
+	static const unsigned long pow10_table[19] = {
 		1u,
 		10u,
 		100u,
