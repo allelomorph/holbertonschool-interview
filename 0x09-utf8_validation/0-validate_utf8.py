@@ -7,10 +7,10 @@ def validUTF8(data):
     """Validates UTF-8 encoding of series of bytes represented as a list of
     integers.
 
-    This is a Pythonic way to automate what can be done manually by checking
-    the values in a byte array. UTF-8 characters can be 1-4 bytes wide, and
-    valid formatting is as follows:
-        U+n:        bytes:      byte prefixes:
+    bytes.decode() is a Pythonic way to automate what can be done manually by
+    checking the values in a byte array. UTF-8 characters can be 1-4 bytes
+    wide, and valid formatting is as follows:
+        Unicode:  UTF8 bytes:   UTF8 byte prefixes:
         0-7f          1         0xxxxxxx
         80-7ff        2         110xxxxx, 10xxxxxx
         800-ffff      3         1110xxxx, 10xxxxxx, 10xxxxxx
@@ -25,12 +25,12 @@ def validUTF8(data):
     if type(data) is not list and type(data[0]) is not int:
         return False
 
-    # convert signed to unsigned for bytes(), only need to consider up to 256
-    # as these ints represent bytes for this exercise
-    data = [n + 256 if n < 0 else n for n in data]
+    # convert signed to unsigned for bytes(), only need to consider 8 least
+    # significant bits as these ints represent bytes for this exercise
+    data = [n + 256 if n < 0 and n > -129 else n for n in data]
 
     try:
-        # bytes.decode() default args, included for clarity
+        # bytes.decode() default args included for clarity
         bytes(data).decode(encoding='utf-8', errors='strict')
     except (ValueError, UnicodeDecodeError):
         return False
