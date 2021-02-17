@@ -22,7 +22,7 @@ def validUTF8(data):
     Returns:
         bool: True if encoding validated, False otherwise
     """
-    if type(data) is not list and type(data[0]) is not int:
+    if not (type(data) is list and len(data) != 0 and type(data[0]) is int):
         return False
 
     # convert signed to unsigned for bytes(), only need to consider 8 least
