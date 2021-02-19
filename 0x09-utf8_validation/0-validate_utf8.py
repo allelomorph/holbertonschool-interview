@@ -29,6 +29,9 @@ def validUTF8(data):
     # significant bits as these ints represent bytes for this exercise
     data = [n + 256 if n < 0 and n > -129 else n for n in data]
 
+    # mask out all but 8 least significant bits
+    data = [n & 0xFF if n >= 0 else n for n in data]
+
     try:
         # bytes.decode() default args included for clarity
         bytes(data).decode(encoding='utf-8', errors='strict')
