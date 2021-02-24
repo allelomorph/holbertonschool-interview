@@ -69,7 +69,7 @@ static void slide_line_right(int *line, size_t size)
 	while (i >= 0)
 	{
 		/* find next unslid value */
-		for (j = last_j ? last_j : j = i - 1;
+		for (j = last_j ? last_j : i - 1;
 		     j >= 0 && line[j] == 0; j--)
 		{}
 		/* no more unslid found */
