@@ -16,17 +16,19 @@
  */
 static void slide_line_left(int *line, size_t size)
 {
-	int i, j;
+	int i, j, last_j = 0;
 
 	i = 0;
 	while (i < (int)size)
 	{
 		/* find next unslid value */
-		for (j = i + 1; j < (int)size && line[j] == 0; j++)
+		for (j = last_j ? last_j : i + 1;
+		     j < (int)size && line[j] == 0; j++)
 		{}
 		/* no more unslid found */
 		if (j == (int)size)
 			break;
+		last_j = j;
 
 		/* slide unslid value to left if space open */
 		if (line[i] == 0)
@@ -61,17 +63,19 @@ static void slide_line_left(int *line, size_t size)
  */
 static void slide_line_right(int *line, size_t size)
 {
-	int i, j;
+	int i, j, last_j = 0;
 
 	i = (int)size - 1;
 	while (i >= 0)
 	{
 		/* find next unslid value */
-		for (j = i - 1; j >= 0 && line[j] == 0; j--)
+		for (j = last_j ? last_j : j = i - 1;
+		     j >= 0 && line[j] == 0; j--)
 		{}
 		/* no more unslid found */
 		if (j == -1)
 			break;
+		last_j = j;
 
 		/* slide unslid value to right if space open */
 		if (line[i] == 0)
