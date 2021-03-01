@@ -7,23 +7,6 @@
 
 
 /**
- * print_array - Prints out an array of integer, followed by a new line
- *
- * @array: Pointer to the array of integer to be printed
- * @size: Number of elements in @array
- */
-static void print_array(int const *array, size_t size)
-{
-	size_t i;
-
-	printf("Line: ");
-	for (i = 0; i < size; i++)
-		printf("%s%d", i > 0 ? ", " : "", array[i]);
-	printf("\n");
-}
-
-
-/**
  * slide_line_left - helper to slide_line, reproduces a version of the "2048"
  * game mechanics, on a single horizontal line, sliding left
  *
@@ -46,11 +29,7 @@ static void slide_line_left(int *line, size_t size)
 		if (j == (int)size)
 			break;
 		last_j = j;
-/*
-		printf("\ti:%i last_j:%i\n", i, last_j);
-		putchar('\t');
-		print_array(line, size);
-*/
+
 		/* slide unslid value to left if space open */
 		if (line[i] == 0)
 		{
@@ -97,11 +76,7 @@ static void slide_line_right(int *line, size_t size)
 		if (j == -1)
 			break;
 		last_j = j;
-/*
-		printf("\ti:%i last_j:%i\n", i, last_j);
-		putchar('\t');
-		print_array(line, size);
-*/
+
 		/* slide unslid value to right if space open */
 		if (line[i] == 0)
 		{
