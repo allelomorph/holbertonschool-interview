@@ -1,85 +1,119 @@
 #include "menger.h"
-
+/* pow */
 #include <math.h>
 /* puts putchar */
 #include <stdio.h>
 /* malloc free */
 #include <stdlib.h>
-
+/* true false */
 #include <stdbool.h>
 
 
-static void testPrintVoidCoords(int level, int **coords)
+/**
+ * isCellAtCoords - tests whether a given coordinate pair in a 2D Menger Sponge
+ * is a cell (void)
+ *
+ * @x: column of printed 2D sponge
+ * @y: row of printed 2D sponge
+ * @level: level of 2D Menger Sponge, determines size and degree of recursion
+ * @coords: `level` number of int arrays, each containing the potential
+ * coordinates of cells of a given size (powers of 3) - if both x and y are in
+ * one of these sets, then position is in a cell
+ * Return: true if x/y is in a cell, false if not or if bad arguments
+ */
+static bool isCellAtCoords(int x, int y, int level, int **coords)
 {
-	int i, j, arr_sz;
+	bool cell;
+	int i, j, k, arr_sz;
 
-	if (level < 1 || coords == NULL)
-		return;
+	if (x < 1 || y < 1 || level < 1 || coords == NULL)
+		return (false);
 
 	arr_sz = (int)pow(3, level - 1);
 
-	for (i = 0; i < level; i++)
+	cell = false;
+	for (i = 0; i < level && !cell; i++)
 	{
-		for (j = 0; j < arr_sz; j++)
-			printf("%3i ", coords[i][j]);
-		putchar('\n');
+		for (j = 0; j < arr_sz && !cell; j++)
+		{
+			if (y == coords[i][j])
+			{
+				for (k = 0; k < arr_sz && !cell; k++)
+				{
+					if (x == coords[i][k])
+						cell = true;
+				}
+			}
+		}
 	}
+
+	return (cell);
 }
 
 
+/**
+ * print2DMengerSponge - prints a 2D representation of a Menger Sponge
+ *
+ * @level: level of 2D Menger Sponge, determines size and degree of recursion
+ * @coords: `level` number of int arrays, each containing the potential
+ * coordinates of cells of a given size (powers of 3) - if both x and y are in
+ * one of these sets, then position is in a cell
+ */
 static void print2DMengerSponge(int level, int **coords)
 {
-	int x, y, i, j, k, sponge_sz, arr_sz;
-	bool cell;
+	int x, y, sponge_sz;
 
 	if (level < 1 || coords == NULL)
 		return;
 
 	sponge_sz = (int)pow(3, level);
-	arr_sz = (int)pow(3, level - 1);
 
 	for (y = 1; y <= sponge_sz; y++)
 	{
 		for (x = 1; x <= sponge_sz; x++)
 		{
-			cell = false;
-			for (i = 0; i < level && !cell; i++)
-			{
-				for (j = 0; j < arr_sz && !cell; j++)
-				{
-					if (y == coords[i][j])
-					{
-						for (k = 0;
-						     k < arr_sz && !cell; k++)
-						{
-							if (x == coords[i][k])
-								cell = true;
-						}
-					}
-				}
-
-			}
-			putchar(cell ? ' ' : '#');
+			if (isCellAtCoords(x, y, level, coords))
+				putchar(' ');
+			else
+				putchar('#');
 		}
 		putchar('\n');
 	}
 }
 
 
-static void freeVoidCoords(int **void_coords, int stop_i)
+/**
+ * freeCellCoords - frees array of int arrays containing sponge cell coords
+ *
+ * @coords: `level` number of int arrays, each containing the potential
+ * coordinates of cells of a given size (powers of 3) - if both x and y are in
+ * one of these sets, then position is in a cell
+ * @stop_i: last array that needs freeing, varies in case of previously failed
+ * allocation
+ */
+static void freeCellCoords(int **coords, int stop_i)
 {
 	int i;
 
 	for (i = 0; i < stop_i; i++)
-		free(void_coords[i]);
-	free(void_coords);
+		free(coords[i]);
+	free(coords);
 }
 
 
-static int *MengerSpongeVoidCoords(int level, int layer)
+/**
+ * MengerSpongeCellCoords - calculates the potential coordinates of a given
+ * layer of cells (voids) in a 2D MengerSponge
+ *
+ * @level: level of 2D Menger Sponge, determines size and degree of recursion
+ * @layer: corresponds to cell(void) size, in powers of 3
+ * Return: array of cell coordinates for a given level and layer, or NULL
+ * on failure
+ */
+static int *MengerSpongeCellCoords(int level, int layer)
 {
 	int *arr = NULL;
-	int arr_sz, arr_i, j, k;
+	int arr_sz, i, j, k, j_lim, k_lim;
 
 	if (level < 1 || layer < 0 ||
 	    layer >= level)
@@ -90,20 +124,22 @@ static int *MengerSpongeVoidCoords(int level, int layer)
 	arr = malloc(sizeof(int) * arr_sz);
 	if (!arr)
 	{
-		fprintf(stderr, "MengerSpongeVoidCoords: malloc failure\n");
+		fprintf(stderr, "MengerSpongeCellCoords: malloc failure\n");
 		return (NULL);
 	}
 
-	arr_i = 0;
-	while (arr_i < arr_sz)
+	j_lim = (int)pow(3, level - (level - layer));
+	k_lim = (int)pow(3, level - (layer + 1));
+
+	for (i = 0; i < arr_sz; )
 	{
-		for (j = 0; j < (int)pow(3, level - (level - layer)); j++)
+		for (j = 0; j < j_lim; j++)
 		{
-			for (k = 1; k <= (int)pow(3, level - (layer + 1)); k++)
+			for (k = 1; k <= k_lim; k++)
 			{
-				arr[arr_i] = (int)pow(3, level - (layer + 1)) +
+				arr[i] = (int)pow(3, level - (layer + 1)) +
 					((int)pow(3, level - layer) * j) + k;
-				arr_i++;
+				i++;
 			}
 		}
 	}
@@ -119,7 +155,7 @@ static int *MengerSpongeVoidCoords(int level, int layer)
  */
 void menger(int level)
 {
-	int **void_coords = NULL;
+	int **cell_coords = NULL;
 	int i;
 
 	if (level < 0)
@@ -131,8 +167,8 @@ void menger(int level)
 		return;
 	}
 
-	void_coords = malloc(sizeof(int *) * level);
-	if (!void_coords)
+	cell_coords = malloc(sizeof(int *) * level);
+	if (!cell_coords)
 	{
 		fprintf(stderr, "menger: malloc failure\n");
 		return;
@@ -140,17 +176,15 @@ void menger(int level)
 
 	for (i = 0; i < level; i++)
 	{
-		void_coords[i] = MengerSpongeVoidCoords(level, i);
-		if (!void_coords[i])
+		cell_coords[i] = MengerSpongeCellCoords(level, i);
+		if (!cell_coords[i])
 		{
-			freeVoidCoords(void_coords, i);
+			freeCellCoords(cell_coords, i);
 			return;
 		}
 	}
 
-	testPrintVoidCoords(level, void_coords);
+	print2DMengerSponge(level, cell_coords);
 
-	print2DMengerSponge(level, void_coords);
-
-	freeVoidCoords(void_coords, level);
+	freeCellCoords(cell_coords, level);
 }
