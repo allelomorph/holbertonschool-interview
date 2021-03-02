@@ -1,7 +1,7 @@
 #include "menger.h"
 /* pow */
 #include <math.h>
-/* puts putchar */
+/* puts putchar fprintf */
 #include <stdio.h>
 /* malloc free */
 #include <stdlib.h>
@@ -103,7 +103,7 @@ static void freeCellCoords(int **coords, int stop_i)
 
 /**
  * MengerSpongeCellCoords - calculates the potential coordinates of a given
- * layer of cells (voids) in a 2D MengerSponge
+ * layer of cells (voids) in a 2D Menger Sponge
  *
  * @level: level of 2D Menger Sponge, determines size and degree of recursion
  * @layer: corresponds to cell(void) size, in powers of 3
@@ -151,7 +151,8 @@ static int *MengerSpongeCellCoords(int level, int layer)
 /**
  * menger - draws a 2 dimensional version of a Menger Sponge, in '#' and ' '
  *
- * @level: level of fractal sponge - 0 = 1x1, 1 = 3x3, 2 = 9x9, etc.
+ * @level: level of 2D Menger Sponge, determines size and degree of recursion
+ * (0 = 1x1, 1 = 3x3, 2 = 9x9, etc.)
  */
 void menger(int level)
 {
