@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""101-nqueens finds all possible solutions the N queens puzzle, including
+"""0-nqueens finds all possible solutions the N queens puzzle, including
 translations and reflections.
 
 Attempted virtual backtracking without recursion. In local tests process will
