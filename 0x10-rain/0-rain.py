@@ -5,9 +5,9 @@
 
 def rain(walls):
     """Measures amount of "water" collected in a landscape represented by a
-    list of integers, as if in a cross section of a topographical map. There
-    is considered to be a height of 0 to the left and right of the list
-    index range.
+    list of integers, as if the elevations encountered in traversal of a
+    topographical map. There is considered to be a height of 0 to the left
+    and right of the list index range.
 
     For example, given the list walls = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
     and 'X' = land, '-' = water:
@@ -42,9 +42,13 @@ def rain(walls):
             for j in range(i + 2, walls_len):
 
                 if walls[j] >= walls[i]:
+
+                    # water level can only be as high as lowest wall of basin
                     water_level = walls[i]
+
                     for k in range(i + 1, j):
                         water_units += water_level - walls[k]
+
                     # right wall becomes left wall of next potential basin
                     L_wall_i = j
                     break
