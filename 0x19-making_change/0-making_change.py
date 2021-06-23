@@ -30,7 +30,7 @@ def makeChange(coins, total):
     total_coins = 0
     remainder = total
     for denom in coins:
-        if denom < remainder:
+        if denom <= remainder:
             curr = remainder // denom
             total_coins += curr
             remainder -= curr * denom
