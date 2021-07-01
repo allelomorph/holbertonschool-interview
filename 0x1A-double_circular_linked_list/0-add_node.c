@@ -7,11 +7,11 @@
 
 
 /**
- * add_node_end - TBD
+ * add_node_end - adds node to the end of a doubly circular linked list
  *
  * @list: double pointer to head of doubly circular DLL
  * @str: string to copy
- * Return: TBD
+ * Return: pointer to new node, or NULL on failure
  */
 List *add_node_end(List **list, char *str)
 {
@@ -55,12 +55,13 @@ List *add_node_end(List **list, char *str)
 	return (new);
 }
 
+
 /**
- * add_node_begin - TBD
+ * add_node_begin - adds node to the start of a doubly circular linked list
  *
  * @list: double pointer to head of doubly circular DLL
  * @str: string to copy
- * Return: TBD
+ * Return: pointer to new node, or NULL on failure
  */
 List *add_node_begin(List **list, char *str)
 {
