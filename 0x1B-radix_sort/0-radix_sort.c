@@ -9,6 +9,26 @@
 
 
 /**
+ * find_max - searches array of integers for highest value
+ *
+ * @array: array of values to be searched
+ * @size: number of elements in array
+ * Return: largest integer stored in array
+ */
+int find_max(int *array, size_t size)
+{
+	int max;
+	size_t i;
+
+	max = array[0];
+	for (i = 1; i < size; i++)
+		if (array[i] > max)
+			max = array[i];
+	return (max);
+}
+
+
+/**
  * init_bucket_sizes - resets bucket_sizes values to 0
  *
  * @bucket_sizes: array containing amounts of members for arrays in `buckets`
@@ -48,6 +68,7 @@ void build_buckets(int *bucket_sizes, int **buckets)
 		bucket = malloc(sizeof(int) * bucket_sizes[i]);
 		if (!bucket)
 		{
+			fprintf(stderr, "build_buckets: malloc failure\n");
 			for (; i > -1; i--)
 				free(buckets[i]);
 			free(buckets);
@@ -58,26 +79,6 @@ void build_buckets(int *bucket_sizes, int **buckets)
 	}
 
 	init_bucket_sizes(bucket_sizes);
-}
-
-
-/**
- * find_max - searches array of integers for highest value
- *
- * @array: array of values to be searched
- * @size: number of elements in array
- * Return: largest integer stored in array
- */
-int find_max(int *array, size_t size)
-{
-	int max;
-	size_t i;
-
-	max = array[0];
-	for (i = 1; i < size; i++)
-		if (array[i] > max)
-			max = array[i];
-	return (max);
 }
 
 
@@ -134,11 +135,11 @@ void radix_sort(int *array, size_t size)
 	buckets = malloc(sizeof(int *) * 10);
 	if (!buckets)
 		exit(EXIT_FAILURE);
-	/* find amount of places in largest element */
+	/* count digits in largest element */
 	max = find_max(array, size);
 	for (max_digits = 0; max > 0; max_digits++)
 		max /= 10;
-	/* one sorting pass for each place in max_digits */
+	/* one sorting pass for each digit/power of 10 in max_digits */
 	for (pass = 0, divisor = 1; pass < max_digits; pass++, divisor *= 10)
 	{
 		init_bucket_sizes(bucket_sizes);
@@ -152,7 +153,7 @@ void radix_sort(int *array, size_t size)
 		/* fill buckets sorting by digit at current power of 10 */
 		for (i = 0; i < size; i++)
 		{
-			/* find digit of source element at that power of 10 */
+			/* find digit of source element at power of 10 */
 			digit = (array[i] / divisor) % 10;
 			/* place member of source array in digit's bucket */
 			buckets[digit][bucket_sizes[digit]] = array[i];
