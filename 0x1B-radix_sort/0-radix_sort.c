@@ -9,39 +9,28 @@
 
 
 /**
- * find_max - searches array of integers for highest value
+ * find_max_int - searches array of integer for highest value
  *
  * @array: array of values to be searched
  * @size: number of elements in array
- * Return: largest integer stored in array
+ * Return: largest integer stored in array, or 0 on failure
  */
-int find_max(int *array, size_t size)
+int find_max_int(int *array, size_t size)
 {
 	int max;
 	size_t i;
+
+	if (!array)
+	{
+		fprintf(stderr, "find_max_int: NULL array\n");
+		return (0);
+	}
 
 	max = array[0];
 	for (i = 1; i < size; i++)
 		if (array[i] > max)
 			max = array[i];
 	return (max);
-}
-
-
-/**
- * init_bucket_sizes - resets bucket_sizes values to 0
- *
- * @bucket_sizes: array containing amounts of members for arrays in `buckets`
- */
-void init_bucket_sizes(int *bucket_sizes)
-{
-	if (!bucket_sizes)
-	{
-		fprintf(stderr, "init_bucket_sizes: NULL parameters\n");
-		exit(EXIT_FAILURE);
-	}
-
-	memset(bucket_sizes, 0, sizeof(int) * 10);
 }
 
 
@@ -77,8 +66,6 @@ void build_buckets(int *bucket_sizes, int **buckets)
 
 		buckets[i] = bucket;
 	}
-
-	init_bucket_sizes(bucket_sizes);
 }
 
 
@@ -126,7 +113,7 @@ void into_array(int *array, size_t size, int **buckets, int *bucket_sizes)
 void radix_sort(int *array, size_t size)
 {
 	int **buckets;
-	int bucket_sizes[10];
+	int bucket_sizes[10], bucket_fill_levels[10];
 	int max, max_digits, pass, divisor, digit;
 	size_t i;
 
@@ -136,13 +123,14 @@ void radix_sort(int *array, size_t size)
 	if (!buckets)
 		exit(EXIT_FAILURE);
 	/* count digits in largest element */
-	max = find_max(array, size);
+	max = find_max_int(array, size);
 	for (max_digits = 0; max > 0; max_digits++)
 		max /= 10;
 	/* one sorting pass for each digit/power of 10 in max_digits */
 	for (pass = 0, divisor = 1; pass < max_digits; pass++, divisor *= 10)
 	{
-		init_bucket_sizes(bucket_sizes);
+		memset(bucket_sizes, 0, sizeof(int) * 10);
+		memset(bucket_fill_levels, 0, sizeof(int) * 10);
 		/* find amount of members in each bucket */
 		for (i = 0; i < size; i++)
 		{
@@ -156,11 +144,12 @@ void radix_sort(int *array, size_t size)
 			/* find digit of source element at power of 10 */
 			digit = (array[i] / divisor) % 10;
 			/* place member of source array in digit's bucket */
-			buckets[digit][bucket_sizes[digit]] = array[i];
+			buckets[digit][bucket_fill_levels[digit]] = array[i];
 			/* record increase in bucket fill level */
-			bucket_sizes[digit]++;
+			bucket_fill_levels[digit]++;
 		}
-		into_array(array, size, buckets, bucket_sizes);
+		/* bucket_fill_levels should now match bucket_sizes */
+		into_array(array, size, buckets, bucket_fill_levels);
 	}
 	free(buckets);
 }
