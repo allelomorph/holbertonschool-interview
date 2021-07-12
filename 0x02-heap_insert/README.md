@@ -10,7 +10,7 @@ Alexa Orrico (source project by Alexandre Gautier)
 12-18-2020 to 12-24-2020
 
 ### Description
-Practice interview question originally appearing as tasks [0. New node](https://github.com/allelomorph/binary_trees/0-binary_tree_node.c) and [37. Heap - Insert](https://github.com/allelomorph/binary_trees/131-heap_insert.c) in [(270) 0x1D. C - Binary trees](https://github.com/allelomorph/binary_trees).
+Practice interview question originally appearing as tasks [0. New node](https://github.com/allelomorph/binary_trees/blob/master/0-binary_tree_node.c) and [37. Heap - Insert](https://github.com/allelomorph/binary_trees/blob/master/131-heap_insert.c) in [(270) 0x1D. C - Binary trees](https://github.com/allelomorph/binary_trees).
 
 ### Provided file(s)
 * definition of `struct binary_tree_s` and `heap_t` for [`binary_trees.h`](./binary_trees.h)

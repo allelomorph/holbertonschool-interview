@@ -12,7 +12,7 @@ Practice interview question not appearing elsewhere in the curriculum. Logic puz
 Practice interview question originally appearing as task [13. Insert in sorted linked list](https://github.com/allelomorph/holbertonschool-higher_level_programming/blob/master/0x01-python-if_else_loops_functions/13-insert_number.c) in [(233) 0x01. Python - if/else, loops, functions](https://github.com/allelomorph/holbertonschool-higher_level_programming/tree/master/0x01-python-if_else_loops_functions).
 
 ### [(465) 0x02. Heap Insert](./0x02-heap_insert/)
-Practice interview question originally appearing as tasks [0. New node](https://github.com/allelomorph/binary_trees/0-binary_tree_node.c) and [37. Heap - Insert](https://github.com/allelomorph/binary_trees/131-heap_insert.c) in [(270) 0x1D. C - Binary trees](https://github.com/allelomorph/binary_trees).
+Practice interview question originally appearing as tasks [0. New node](https://github.com/allelomorph/binary_trees/blob/master/0-binary_tree_node.c) and [37. Heap - Insert](https://github.com/allelomorph/binary_trees/blob/master/131-heap_insert.c) in [(270) 0x1D. C - Binary trees](https://github.com/allelomorph/binary_trees).
 
 ### [(488) 0x03. Minimum Operations](./0x03-minimum_operations/)
 Practice interview question not appearing elsewhere in the curriculum. Logic puzzle determining how many "Copy All" and "Paste" operations needed to match target number of characters in string.
