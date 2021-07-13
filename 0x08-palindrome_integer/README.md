@@ -27,8 +27,7 @@ Write a function that checks whether or not a given unsigned integer is a palind
 * Your function must return 1 if n is a palindrome, and 0 otherwise
 * You are not allowed to allocate memory dynamically (malloc, calloc, …)
 
-File(s): [`0-is_palindrome.c`](./0-is_palindrome.c)\
-[`palindrome.h`](./palindrome.h)\
+File(s): [`0-is_palindrome.c`](./0-is_palindrome.c) [`palindrome.h`](./palindrome.h)\
 Compiled: `gcc -Wall -Wextra -Werror -pedantic -g3 -o palindrome 0-main.c 0-is_palindrome.c`
 
 ---

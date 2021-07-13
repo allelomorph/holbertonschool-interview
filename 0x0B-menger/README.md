@@ -39,8 +39,7 @@ Format:
     * …
 * TIP: The size of a level `N` Menger sponge is calculated as follows: `3^N`
 
-File(s): [`0-menger.c`](./0-menger.c)\
-[`menger.h`](./menger.h)\
+File(s): [`0-menger.c`](./0-menger.c) [`menger.h`](./menger.h)\
 Compiled: `gcc -Wall -Wextra -Werror -pedantic -o 0-menger 0-menger.c 0-main.c -lm`
 
 ---

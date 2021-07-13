@@ -34,8 +34,7 @@ Given an array of integers, we want to be able to slide & merge it to the left o
 * Your function must return 1 upon success, or 0 upon failure
 * You are not allowed to allocate memory dynamically (malloc, calloc, …)
 
-File(s): [`0-slide_line.c`](./0-slide_line.c)\
-[`slide_line.h`](./slide_line.h)\
+File(s): [`0-slide_line.c`](./0-slide_line.c) [`slide_line.h`](./slide_line.h)\
 Compiled: `gcc -Wall -Wextra -Werror -pedantic -o 0-slide_line 0-main.c 0-slide_line.c`
 
 ---

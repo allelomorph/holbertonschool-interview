@@ -26,7 +26,7 @@ Practice interview question originally appearing as task [13. Linked list palind
 ### [(474) 0x06. Log Parsing](./0x06-log_parsing/)
 Practice interview question originally appearing as task [14. Log parsing](https://github.com/allelomorph/holbertonschool-higher_level_programming/blob/master/0x0B-python-input_output/101-stats.py) in [(260) 0x0B. Python - Input/Output](https://github.com/allelomorph/holbertonschool-higher_level_programming/tree/master/0x0B-python-input_output).
 
-### [0x07. Linked list cycle](./0x07-linked_list_cycle/)
+### [(438) 0x07. Linked list cycle](./0x07-linked_list_cycle/)
 Practice interview question originally appearing as task [10. Linked list cycle](https://github.com/allelomorph/holbertonschool-higher_level_programming/blob/master/0x00-python-hello_world/10-check_cycle.c) in [(231) 0x00. Python - Hello, World](https://github.com/allelomorph/holbertonschool-higher_level_programming/tree/master/0x00-python-hello_world).
 
 ### [(444) 0x08. Palindrome integer](./0x08-palindrome_integer/)
