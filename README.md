@@ -29,13 +29,17 @@ Practice interview question originally appearing as task [14. Log parsing](https
 ### [0x07. Linked list cycle](./0x07-linked_list_cycle/)
 Practice interview question originally appearing as task [10. Linked list cycle](https://github.com/allelomorph/holbertonschool-higher_level_programming/blob/master/0x00-python-hello_world/10-check_cycle.c) in [(231) 0x00. Python - Hello, World](https://github.com/allelomorph/holbertonschool-higher_level_programming/tree/master/0x00-python-hello_world).
 
-### [0x08. Palindrome integer](./0x08-palindrome_integer/)
+### [(444) 0x08. Palindrome integer](./0x08-palindrome_integer/)
+Practice interview question not appearing elsewhere in the curriculum. Devising a test if an integer represented by a string is a palindrome.
 
-### [0x09. UTF-8 Validation](./0x09-utf8_validation/)
+### [(490) 0x09. UTF-8 Validation](./0x09-utf8_validation/)
+Practice interview question not appearing elsewhere in the curriculum. Validation of byte values of stream as conforming with UTF-8 characters.
 
-### [0x0A. 2048 (single line)](./0x0A-slide_line/)
+### [(451) 0x0A. 2048 (single line)](./0x0A-slide_line/)
+Practice interview question not appearing elsewhere in the curriculum. Recreation of a sliding number puzzle.
 
-### [0x0B. Menger sponge](./0x0B-menger/)
+### [(454) 0x0B. Menger sponge](./0x0B-menger/)
+Practice interview question not appearing elsewhere in the curriculum. Creation of a function that draws a 2D Menger Sponge.
 
 ### [0x0C. N Queens](./0x0C-nqueens/)
 
