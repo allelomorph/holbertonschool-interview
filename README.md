@@ -54,7 +54,7 @@ Practice interview question originally appearing as task [13. Linear search in a
 Practice interview question not appearing elsewhere in the curriculum, but similar to tasks in [(300) 0x11. Python - Network #1](https://github.com/allelomorph/holbertonschool-higher_level_programming/tree/master/0x11-python-network_1) and [(305) 0x15. JavaScript - Web jQuery](https://github.com/allelomorph/holbertonschool-higher_level_programming/tree/master/0x15-javascript-web_jquery). Query the Star Wars API to get all characters appearing in a given film.
 
 ### [(508) 0x10. Rain](./0x10-rain/)
-Practice interview question not appearing elsewhere in the curriculum, but found [elsewhere online](https://www.geeksforgeeks.org/trapping-rain-water/).
+Practice interview question not appearing elsewhere in the curriculum. Measuring volumes of basins in a [2D relief map](https://www.geeksforgeeks.org/trapping-rain-water/).
 
 ### [(462) 0x11. Heap Sort](./0x11-heap_sort/)
 Practice interview question originally appearing as task [8. Heap sort](https://github.com/allelomorph/sorting_algorithms/blob/master/104-heap_sort.c) in [(248) 0x1B. C - Sorting algorithms & Big O](https://github.com/allelomorph/sorting_algorithms).
@@ -63,7 +63,7 @@ Practice interview question originally appearing as task [8. Heap sort](https://
 Practice interview question originally appearing as task [11. Advanced binary search](https://github.com/allelomorph/holbertonschool-low_level_programming/blob/master/0x1E-search_algorithms/104-advanced_binary.c) in [(295) 0x1E. C - Search Algorithms](https://github.com/allelomorph/holbertonschool-low_level_programming/tree/master/0x1E-search_algorithms).
 
 ### [(476) 0x13. Count it!](./0x13-count_it/)
-Practice interview question originally appearing as task [3. Count it!](https://github.com/allelomorph/holberton-system_engineering-devops/blob/master/0x16-api_advanced/100-count.py) in [314) 0x16. API advanced](https://github.com/allelomorph/holberton-system_engineering-devops/tree/master/0x16-api_advanced).
+Practice interview question originally appearing as task [3. Count it!](https://github.com/allelomorph/holberton-system_engineering-devops/blob/master/0x16-api_advanced/100-count.py) in [(314) 0x16. API advanced](https://github.com/allelomorph/holberton-system_engineering-devops/tree/master/0x16-api_advanced).
 
 ### [0x14. Heap Extract](./0x14-heap_extract/)
 
