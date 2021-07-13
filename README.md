@@ -41,13 +41,17 @@ Practice interview question not appearing elsewhere in the curriculum. Recreatio
 ### [(454) 0x0B. Menger sponge](./0x0B-menger/)
 Practice interview question not appearing elsewhere in the curriculum. Creation of a function that draws a 2D Menger Sponge.
 
-### [0x0C. N Queens](./0x0C-nqueens/)
+### [(463) 0x0C. N Queens](./0x0C-nqueens/)
+Practice interview question originally appearing as task [11. N queens](https://github.com/allelomorph/holbertonschool-higher_level_programming/blob/master/0x08-python-more_classes/101-nqueens.py) in [(250) 0x08. Python - More Classes and Objects](https://github.com/allelomorph/holbertonschool-higher_level_programming/tree/master/0x08-python-more_classes).
 
-### [0x0D. Array to AVL](./0x0D-sorted_array_to_avl/)
+### [(455) 0x0D. Array to AVL](./0x0D-sorted_array_to_avl/)
+Practice interview question originally appearing as task [34. AVL - From sorted array](https://github.com/allelomorph/binary_trees/blob/master/124-sorted_array_to_avl.c) in [(270) 0x1D. C - Binary trees](https://github.com/allelomorph/binary_trees).
 
-### [0x0E. Linear search in skip list](./0x0E-linear_skip/)
+### [(461) 0x0E. Linear search in skip list](./0x0E-linear_skip/)
+Practice interview question originally appearing as task [13. Linear search in a skip list](https://github.com/allelomorph/holbertonschool-low_level_programming/blob/master/0x1E-search_algorithms/106-linear_skip.c) in [(295) 0x1E. C - Search Algorithms](https://github.com/allelomorph/holbertonschool-low_level_programming/tree/master/0x1E-search_algorithms).
 
 ### [0x0F. Star Wars API](./0x0F-starwars_api/)
+Practice interview question not appearing elsewhere in the curriculum, but similar to tasks in [(300) 0x11. Python - Network #1](https://github.com/allelomorph/holbertonschool-higher_level_programming/tree/master/0x11-python-network_1) and [(305) 0x15. JavaScript - Web jQuery](https://github.com/allelomorph/holbertonschool-higher_level_programming/tree/master/0x15-javascript-web_jquery). Query the Star Wars API to get all characters appearing in a given film.
 
 ### [0x10. Rain](./0x10-rain/)
 
