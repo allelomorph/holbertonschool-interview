@@ -17,13 +17,17 @@ Practice interview question originally appearing as tasks [0. New node](https://
 ### [(488) 0x03. Minimum Operations](./0x03-minimum_operations/)
 Practice interview question not appearing elsewhere in the curriculum. Logic puzzle determining how many "Copy All" and "Paste" operations needed to match target number of characters in string.
 
-### [0x04. Sandpiles](./0x04-sandpiles/)
+### [(460) 0x04. Sandpiles](./0x04-sandpiles/)
+Practice interview question not appearing elsewhere in the curriculum. Logic puzzle involving tracking the values of integers in a grid as they "overflow" into their neighboring cells.
 
-### [0x05. Linked list palindrome](./0x05-linked_list_palindrome/)
+### [(440) 0x05. Linked list palindrome](./0x05-linked_list_palindrome/)
+Practice interview question originally appearing as task [13. Linked list palindrome](https://github.com/allelomorph/holbertonschool-higher_level_programming/blob/master/0x03-python-data_structures/13-is_palindrome.c) in [(241) 0x03. Python - Data Structures: Lists, Tuples](https://github.com/allelomorph/holbertonschool-higher_level_programming/tree/master/0x03-python-data_structures).
 
-### [0x06. Log Parsing](./0x06-log_parsing/)
+### [(474) 0x06. Log Parsing](./0x06-log_parsing/)
+Practice interview question originally appearing as task [14. Log parsing](https://github.com/allelomorph/holbertonschool-higher_level_programming/blob/master/0x0B-python-input_output/101-stats.py) in [(260) 0x0B. Python - Input/Output](https://github.com/allelomorph/holbertonschool-higher_level_programming/tree/master/0x0B-python-input_output).
 
 ### [0x07. Linked list cycle](./0x07-linked_list_cycle/)
+Practice interview question originally appearing as task [10. Linked list cycle](https://github.com/allelomorph/holbertonschool-higher_level_programming/blob/master/0x00-python-hello_world/10-check_cycle.c) in [(231) 0x00. Python - Hello, World](https://github.com/allelomorph/holbertonschool-higher_level_programming/tree/master/0x00-python-hello_world).
 
 ### [0x08. Palindrome integer](./0x08-palindrome_integer/)
 
