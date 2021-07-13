@@ -12,28 +12,25 @@ Alexa Orrico (source project by Alexandre Gautier)
 ### Description
 Practice interview question not appearing elsewhere in the curriculum, but similar to tasks in [(300) 0x11. Python - Network #1](https://github.com/allelomorph/holbertonschool-higher_level_programming/tree/master/0x11-python-network_1) and [(305) 0x15. JavaScript - Web jQuery](https://github.com/allelomorph/holbertonschool-higher_level_programming/tree/master/0x15-javascript-web_jquery). Query the Star Wars API to get all characters appearing in a given film.
 
-### Prequisites
+### Prerequisites
 * Install Node 10
 ```
 $ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 $ sudo apt-get install -y nodejs
 ```
 
-* Install semi-standard
+* Install semi-standard\
 [Documentation](https://github.com/standard/semistandard)
 ```
 $ sudo npm install semistandard --global
 ```
 
-* Install request module and use it
+* Install request module and use it\
 [Documentation](https://github.com/request/request)
 ```
 $ sudo npm install request --global
 $ export NODE_PATH=/usr/lib/node_modules
 ```
-
-### Provided file(s)
-
 ---
 
 ## Mandatory Tasks
