@@ -4,7 +4,7 @@ Specializations > Interview Preparation > Algorithms
 ---
 
 ### Project author
-Alexandre Gautier (source project by Alexandre Gautier)
+Alexandre Gautier (source project by Wilfried Hennuyer)
 
 ### Assignment dates
 03-29-2021 to 04-02-2021
