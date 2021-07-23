@@ -65,23 +65,30 @@ Practice interview question originally appearing as task [11. Advanced binary se
 ### [(476) 0x13. Count it!](./0x13-count_it/)
 Practice interview question originally appearing as task [3. Count it!](https://github.com/allelomorph/holberton-system_engineering-devops/blob/master/0x16-api_advanced/100-count.py) in [(314) 0x16. API advanced](https://github.com/allelomorph/holberton-system_engineering-devops/tree/master/0x16-api_advanced).
 
-### [0x14. Heap Extract](./0x14-heap_extract/)
+### [(466) 0x14. Heap Extract](./0x14-heap_extract/)
+Practice interview question originally appearing as task [39. Heap - Extract](https://github.com/allelomorph/binary_trees/blob/master/133-heap_extract.c) in [(270) 0x1D. C - Binary trees](https://github.com/allelomorph/binary_trees).
 
-### [0x15. Infinite Multiplication](./0x15-infinite_multiplication/)
+### [(468) 0x15. Infinite Multiplication](./0x15-infinite_multiplication/)
+Practice interview question originally appearing as task [5. We must accept finite disappointment, but never lose infinite hope](https://github.com/allelomorph/holbertonschool-low_level_programming/blob/master/0x0C-more_malloc_free/101-mul.c) in [(223) 0x0C. C - More malloc, free](https://github.com/allelomorph/holbertonschool-low_level_programming/tree/master/0x0C-more_malloc_free).
 
-### [0x16. Rotate 2D Matrix](./0x16-rotate_2d_matrix/)
+### [(503) 0x16. Rotate 2D Matrix](./0x16-rotate_2d_matrix/)
+Practice interview question not appearing elsewhere in the curriculum. 90 degree rotation of a 2-dimensional matrix of integers in Python.
 
-### [0x17. Find the Loop](./0x17-find_the_loop/)
+### [(472) 0x17. Find the Loop](./0x17-find_the_loop/)
+Practice interview question originally appearing as task **14. Find the loop** in [(230) 0x13. C - More singly linked lists](https://github.com/allelomorph/holbertonschool-low_level_programming/tree/master/0x13-more_singly_linked_lists).
 
-### [0x18. Merge Sort](./0x18-merge_sort/)
+### [(482) 0x18. Merge Sort](./0x18-merge_sort/)
+Practice interview question originally appearing as task [7. Merge sort](https://github.com/allelomorph/sorting_algorithms/blob/master/103-merge_sort.c) in [(248) 0x1B. C - Sorting algorithms & Big O](https://github.com/allelomorph/sorting_algorithms/).
 
-### [](./0x19-making_change/)
+### [(492) 0x19. Making Change](./0x19-making_change/)
 
-### [](./0x1A-double_circular_linked_list/)
+### [(478) 0x1A. Double Circular Linked List](./0x1A-double_circular_linked_list/)
 
-### [](./0x1B-radix_sort/)
+### [(480) 0x1B. Radix Sort](./0x1B-radix_sort/)
 
-### [](./0x1C-island_perimeter/)
+### [(496) 0x1C. Island Perimeter](./0x1C-island_perimeter/)
+
+### [(484) 0x1D. AVL Trees](./0x1D-avl_trees/)
 
 ---
 
