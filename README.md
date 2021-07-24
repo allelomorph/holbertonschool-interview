@@ -81,14 +81,19 @@ Practice interview question originally appearing as task **14. Find the loop** i
 Practice interview question originally appearing as task [7. Merge sort](https://github.com/allelomorph/sorting_algorithms/blob/master/103-merge_sort.c) in [(248) 0x1B. C - Sorting algorithms & Big O](https://github.com/allelomorph/sorting_algorithms/).
 
 ### [(492) 0x19. Making Change](./0x19-making_change/)
+Practice interview question not appearing elsewhere in the curriculum. Logic puzzle determining what is the minimum number of coins, given an arbitrary set of denominations, that is needed to equal a target value.
 
 ### [(478) 0x1A. Double Circular Linked List](./0x1A-double_circular_linked_list/)
+Practice interview question not appearing elsewhere in the original curriculum, but similar to task **8. Part 3 (Double circular linked lists) - Add nodes** in project **(176) Advanced Linked Lists** in the revised curriculum. Write subroutines to add a node to the beginning and end of a double circular linked list.
 
 ### [(480) 0x1B. Radix Sort](./0x1B-radix_sort/)
+Practice interview question originally appearing as task [9. Radix sort](https://github.com/allelomorph/sorting_algorithms/blob/master/105-radix_sort.c) in [(248) 0x1B. C - Sorting algorithms & Big O](https://github.com/allelomorph/sorting_algorithms/).
 
 ### [(496) 0x1C. Island Perimeter](./0x1C-island_perimeter/)
+Practice interview question originally appearing as task [5. Island Perimeter](https://github.com/allelomorph/holbertonschool-low_level_programming/blob/master/0x1C-makefiles/5-island_perimeter.py) in [(273) 0x1C. C - Makefiles](https://github.com/allelomorph/holbertonschool-low_level_programming/tree/master/0x1C-makefiles).
 
 ### [(484) 0x1D. AVL Trees](./0x1D-avl_trees/)
+Practice interview question originally appearing as task [30. Is AVL](https://github.com/allelomorph/binary_trees/blob/master/120-binary_tree_is_avl.c) in [(270) 0x1D. C - Binary trees](https://github.com/allelomorph/binary_trees/).
 
 ---
 
