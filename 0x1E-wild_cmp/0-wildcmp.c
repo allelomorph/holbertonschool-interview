@@ -37,11 +37,13 @@ int globMatch(char *base, char *pattern, int *tested_indicies)
 	 * If glob is at end of pattern or is bounded by another wildcard,
 	 * then it counts as a match beyond the current wildcard.
 	 */
-	if (*(pattern + 1) == '\0' || *(pattern + 1) == '*')
-		return (1);
-
 	if (*base == *pattern)
+	{
+		if (*(pattern + 1) == '\0' || *(pattern + 1) == '*')
+			return (1);
+
 		return (globMatch(base + 1, pattern + 1, tested_indicies));
+	}
 
 	return (0);
 }
@@ -101,7 +103,10 @@ int _wildcmp(char *base, char *pattern, bool wildcard)
 			        return (_wildcmp(base + offset,
 						 pattern + offset, false));
 			}
+/*
 			return (_wildcmp(base + offset, pattern, true));
+*/
+			return (_wildcmp(base + 1, pattern, true));
 		}
 
 		return (_wildcmp(base + 1, pattern, true));
