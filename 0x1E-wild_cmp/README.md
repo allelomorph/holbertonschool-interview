@@ -13,7 +13,9 @@ Alexa Orrico
 Practice interview question not appearing elsewhere in the curriculum. Coding an algorithm to handle wildcard `*` comparisons in file names.
 
 ### Special Requirements
-You are not allowed to use loops of any kind.
+* You are not allowed to use loops of any kind.
+* `ltrace` allowed functions: `write`, `printf`, `putchar`, `puts`
+* `static` variables are not allowed
 
 ### Provided file(s)
 * [`0-main.c`](./0-main.c)
