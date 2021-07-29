@@ -1,13 +1,16 @@
 #include "holberton.h"
 /* true false */
 #include <stdbool.h>
-/* strrchr */
-#include <string.h>
 /* fprintf */
 #include <stdio.h>
 
 
-/* Special project requirement - no looping of any kind not allowed. */
+/*
+ * Special project requirements:
+ * - You are not allowed to use loops of any kind.
+ * - ltrace allowed functions: write, printf, putchar, puts
+ * - static variables are not allowed
+ */
 /**
  * _wildcmp - recursive helper to wildcmp, compares two strings using
  *   UNIX-like asterisk wildcard syntax
