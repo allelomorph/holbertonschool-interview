@@ -21,7 +21,7 @@ bool test(char *base, char *pattern, bool expected_result)
 	return (true);
 }
 
-int testwild(void)
+int testWild(void)
 {
 	int  nReps;
 	bool all_passed = true;
@@ -59,7 +59,7 @@ int testwild(void)
 		all_passed &= test("a12b12", "a12b", false);
 		all_passed &= test("a12b12", "*12*12*", true);
 
-#if !defined(COMPARE_PERFORMANCE)
+#ifdef COMPARE_PERFORMANCE
 		/* From DDJ reader Andy Belf */
 		all_passed &= test("caaab", "*a?b", true);
 #endif
@@ -77,7 +77,6 @@ int testwild(void)
 		all_passed &= test("xyxyxyxyz", "xy*xyz", true);
 		all_passed &= test("miSsissippi", "mi*sip*", true);
 		all_passed &= test("miSsissippi", "mi*Sip*", false);
-		all_passed &= test("abAbac", "*Abac*", true);
 		all_passed &= test("abAbac", "*Abac*", true);
 		all_passed &= test("aAazz", "a*zz*", true);
 		all_passed &= test("A12b12", "*12*23", false);
@@ -165,15 +164,15 @@ bcdefghij*abcdefghijk*abcdefghijkl*abcdefghijklm*abcdefghijklmn",
 	}
 
 	if (all_passed)
-		printf("Passed\n");
+		printf("testWild passed\n");
 	else
-		printf("Failed\n");
+		printf("testWild failed\n");
 
 	return (0);
 }
 
 
-int testtame(void)
+int testTame(void)
 {
 	int  nReps;
 	bool all_passed = true;
@@ -287,14 +286,14 @@ bcdefghijabcdefghijkabcdefghijklabcdefghijklmabcdefghijklmn", true);
 	}
 
 	if (all_passed)
-		printf("Passed\n");
+		printf("testTame passed\n");
 	else
-		printf("Failed\n");
+		printf("testTame failed\n");
 
 	return (0);
 }
 
-int testempty(void)
+int testEmpty(void)
 {
 	int  nReps;
 	bool all_passed = true;
@@ -395,9 +394,9 @@ int testempty(void)
 	}
 
 	if (all_passed)
-		printf("Passed\n");
+		printf("testEmpty passed\n");
 	else
-		printf("Failed\n");
+		printf("testEmpty failed\n");
 
 	return (0);
 }
@@ -406,14 +405,13 @@ int testempty(void)
 int main(void)
 {
 #ifdef COMPARE_TAME
-	testtame();
+	testTame();
 #endif
 #ifdef COMPARE_EMPTY
-	testempty();
+	testEmpty();
 #endif
 #ifdef COMPARE_WILD
-
-	testwild();
+	testWild();
 #endif
 	return (0);
 }
