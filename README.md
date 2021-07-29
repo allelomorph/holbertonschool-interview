@@ -96,7 +96,7 @@ Practice interview question originally appearing as task [5. Island Perimeter](h
 Practice interview question originally appearing as task [30. Is AVL](https://github.com/allelomorph/binary_trees/blob/master/120-binary_tree_is_avl.c) in [(270) 0x1D. C - Binary trees](https://github.com/allelomorph/binary_trees/).
 
 ### [(502) 0x1E. Wild Compare](./0x1E-wild_cmp/)
-Practice interview question not appearing elsewhere in the curriculum. Coding an algorithm to handle wildcard `*` comparisons in file names.
+Practice interview question originally appearing as task **8. Inception. Now, before you bother telling me it's impossible...** in [(219) 0x08. C - Recursion](https://github.com/allelomorph/holbertonschool-low_level_programming/tree/master/0x08-recursion).
 
 ---
 

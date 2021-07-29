@@ -4,13 +4,13 @@ Specializations > Interview Preparation > Algorithms
 ---
 
 ### Project author
-Alexa Orrico
+Alexa Orrico (source project by Julien Barbier)
 
 ### Assignment dates
 07-26-2021 to 07-30-2021
 
 ### Description
-Practice interview question not appearing elsewhere in the curriculum. Coding an algorithm to handle wildcard `*` comparisons in file names.
+Practice interview question originally appearing as task **8. Inception. Now, before you bother telling me it's impossible...** in [(219) 0x08. C - Recursion](https://github.com/allelomorph/holbertonschool-low_level_programming/tree/master/0x08-recursion).
 
 ### Special Requirements
 * You are not allowed to use loops of any kind.
@@ -24,7 +24,7 @@ Practice interview question not appearing elsewhere in the curriculum. Coding an
 
 ## Mandatory Tasks
 
-### :white_large_square: 0. Wild Compare
+### :white_check_mark: 0. Wild Compare
 Write a function that compares two strings and returns 1 if the strings can be considered identical, otherwise return 0.
 
 * Prototype: `int wildcmp(char *s1, char *s2);`
