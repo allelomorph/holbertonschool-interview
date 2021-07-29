@@ -22,32 +22,19 @@
  */
 int _wildcmp(char *base, char *pattern, bool wildcard)
 {
-	switch (*pattern)
-	{
-	case '*':
-		if (*base == '*')
-			return (_wildcmp(base + 1, pattern + 1, false));
+	if (*pattern == '*')
 		return (_wildcmp(base, pattern + 1, true));
-	case '?':
-		if (!*base)
-			return (0);
-		return (_wildcmp(base + 1, pattern + 1, false));
-	default:
-		if (wildcard)
-		{
-			/* advance base until last occurance of *pattern */
-			base = strrchr(base, *pattern);
-			if (!base)
-				return (0);
-		}
 
-		if (*base == *pattern)
-		{
-			if (*pattern == '\0')
-				return (1);
-			return (_wildcmp(base + 1, pattern + 1, false));
-		}
+	if (*base == *pattern)
+	{
+		if (*base == '\0')
+			return (1);
+
+		return (_wildcmp(base + 1, pattern + 1, false));
 	}
+
+	if (wildcard)
+		return (_wildcmp(base + 1, pattern, wildcard));
 
 	return (0);
 }
