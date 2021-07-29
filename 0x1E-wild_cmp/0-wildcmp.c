@@ -11,6 +11,12 @@
  * - ltrace allowed functions: write, printf, putchar, puts
  * - static variables are not allowed
  */
+/*
+ * Currently failing only these three tests in testWild:
+ *  - Expected 1 for base:'a*abab' pattern:'a*b'
+ *  - Expected 1 for base:'ab' pattern:'*?'
+ *  - Expected 1 for base:'abc' pattern:'*?'
+ */
 /**
  * globMatch - recursive helper to _wildcmp, checks substrings in base and
  *   pattern to see if the local base substring is a valid match to the local
@@ -21,17 +27,17 @@
  * @pattern: current postion in pattern string to compare to - can contain the
  *   special character `*`, which can represent any string (including an empty
  *   string)
+ * @tested_indices: count of how many positions in the base and pattern
+ *   substrings have been evaluated, modified by reference
  *
  * Return: 1 if glob matches base after current wildcard, 0 if not or failure
  */
-int globMatch(char *base, char *pattern, int *tested_indicies)
+int globMatch(char *base, char *pattern, int *tested_indices)
 {
-	if (!base || !pattern || !tested_indicies)
+	if (!base || !pattern || !tested_indices)
 		return (0);
-/*
-	printf("\t\tglobMatch: base:'%s' pattern:'%s' *tested_indicies:%i\n", base, pattern, *tested_indicies);
-*/
-	(*tested_indicies)++;
+
+	(*tested_indices)++;
 
 	/*
 	 * If glob is at end of pattern or is bounded by another wildcard,
@@ -42,7 +48,7 @@ int globMatch(char *base, char *pattern, int *tested_indicies)
 		if (*(pattern + 1) == '\0' || *(pattern + 1) == '*')
 			return (1);
 
-		return (globMatch(base + 1, pattern + 1, tested_indicies));
+		return (globMatch(base + 1, pattern + 1, tested_indices));
 	}
 
 	return (0);
@@ -64,13 +70,10 @@ int globMatch(char *base, char *pattern, int *tested_indicies)
 int _wildcmp(char *base, char *pattern, bool wildcard)
 {
 	int offset = 0;
-	int retval;
 
 	if (!base || !pattern)
 		return (0);
-/*
-	printf("\t_wildcmp: base:'%s' pattern:'%s' wildcard:%s\n", base, pattern, wildcard ? "true" : "false");
-*/
+
 	if (*pattern == '*')
 		return (_wildcmp(base, pattern + 1, true));
 
@@ -85,33 +88,14 @@ int _wildcmp(char *base, char *pattern, bool wildcard)
 	if (wildcard)
 	{
 		if (*base == '\0')
-		{
-			if (*pattern)
-				return (0);
-			else
-				return (1);
-		}
+			return (*pattern == '\0');
 
-		if (*base == *pattern)
-		{
-			retval = globMatch(base, pattern, &offset);
-/*
-			printf("\t\t\tglobMatch:%i offset:%i\n", retval, offset);
-*/
-			if (retval)
-			{
-			        return (_wildcmp(base + offset,
-						 pattern + offset, false));
-			}
-/*
-			return (_wildcmp(base + offset, pattern, true));
-*/
-			return (_wildcmp(base + 1, pattern, true));
-		}
+		if (*base == *pattern && globMatch(base, pattern, &offset))
+			return (_wildcmp(base + offset,
+					 pattern + offset, false));
 
 		return (_wildcmp(base + 1, pattern, true));
 	}
-
 
 	if (*base == *pattern)
 	{
