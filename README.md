@@ -98,6 +98,9 @@ Practice interview question originally appearing as task [30. Is AVL](https://gi
 ### [(502) 0x1E. Wild Compare](./0x1E-wild_cmp/)
 Practice interview question originally appearing as task **8. Inception. Now, before you bother telling me it's impossible...** in [(219) 0x08. C - Recursion](https://github.com/allelomorph/holbertonschool-low_level_programming/tree/master/0x08-recursion).
 
+### [(500) 0x1F. Pascal's Triangle](./0x1F-pascal_triangle/)
+Practice interview question originally appearing as task [12. Pascal's Triangle](https://github.com/allelomorph/holbertonschool-higher_level_programming/blob/master/0x0B-python-input_output/14-pascal_triangle.py) in [(260) 0x0B. Python - Input/Output](https://github.com/allelomorph/holbertonschool-higher_level_programming/tree/master/0x0B-python-input_output).
+
 ---
 
 ## Student
