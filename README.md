@@ -101,6 +101,9 @@ Practice interview question originally appearing as task **8. Inception. Now, be
 ### [(500) 0x1F. Pascal's Triangle](./0x1F-pascal_triangle/)
 Practice interview question originally appearing as task [12. Pascal's Triangle](https://github.com/allelomorph/holbertonschool-higher_level_programming/blob/master/0x0B-python-input_output/14-pascal_triangle.py) in [(260) 0x0B. Python - Input/Output](https://github.com/allelomorph/holbertonschool-higher_level_programming/tree/master/0x0B-python-input_output).
 
+### [(504) 0x20. RegEx](./0x20-regex/)
+Practice interview question not appearing elsewhere in the curriculum. Building simple regular expression matching algorithm that only supports `.` and `*` syntax.
+
 ---
 
 ## Student
