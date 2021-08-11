@@ -18,16 +18,20 @@
  * @p_match_end: pointer to the first index in pattern after a substring
  *   bounded by an open wildcard to the left, and another wildcard or the end
  *   of the pattern on the right
+ *
+ * Return: 1 if matching substring found after wildcard, or 0 if not or on
+ *   failure
  */
-void regexSubstrMatch(char const *str, char const *pattern,
+int regexSubstrMatch(char const *str, char const *pattern,
 		     const char **s_match_end, const char **p_match_end)
 {
 	const char *p_match_start;
+	int match = 0;
 
 	if (!str || !pattern)
 	{
 		fprintf(stderr, "regexSubstrMatch: NULL parameter(s)\n");
-		return;
+		return (0);
 	}
 
 	while (*str)
@@ -40,21 +44,26 @@ void regexSubstrMatch(char const *str, char const *pattern,
 
 		/* attempt to match exit substring */
 		while (*str == *pattern && *pattern != '.' &&
-		       *pattern != '*' && *pattern != '\0')
+		       *pattern != '*' && *pattern != '\0' &&
+		       *(pattern + 1) != '*')
 		{
 			str++;
 			pattern++;
 		}
 
 		/* record end of current substr match in str */
-		if (*pattern == '.' || *pattern == '*' || *pattern == '\0')
+		if (*pattern == '.' || *pattern == '*' ||
+		    *pattern == '\0' || *(pattern + 1) == '*')
 		{
 			*p_match_end = pattern;
 			*s_match_end = str;
+			match = 1;
 		}
 
 		pattern = p_match_start;
 	}
+
+	return (match);
 }
 
 
@@ -85,12 +94,13 @@ int regex_match(char const *str, char const *pattern)
 		{
 			if (*pattern == '.')
 			{
-				regexSubstrMatch(str, pattern + 2,
-						 &s_match_end, &p_match_end);
-				if (!s_match_end && !p_match_end)
-					return (0);
-				str = s_match_end;
-				pattern = p_match_end;
+				pattern += 2;
+				if (regexSubstrMatch(str, pattern, &s_match_end,
+						     &p_match_end))
+				{
+					str = s_match_end;
+					pattern = p_match_end;
+				}
 			}
 			else
 			{
@@ -108,5 +118,5 @@ int regex_match(char const *str, char const *pattern)
 		else
 			break;
 	}
-	return (!(*str));
+	return (!(*str) && !(*pattern));
 }
