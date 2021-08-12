@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+/* adapted from http://developforperformance.com/MatchingWildcards_AnImprovedAlgorithmForBigData.html */
+
 /*
 #define COMPARE_PERFORMANCE  1
 */
