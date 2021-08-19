@@ -44,7 +44,7 @@ int *find_substring(char const *s, char const **words, int nb_words, int *n)
 		return (NULL);
 	}
 
-	for (i = 0, k = 0, _n = 0; i < s_len; i++)
+	for (i = 0, k = 0, _n = 0; i < s_len;)
 	{
 		substr_match = 0;
 		bzero(matched_word, nb_words * sizeof(int));
@@ -75,6 +75,8 @@ int *find_substring(char const *s, char const **words, int nb_words, int *n)
 			k++;
 			i += word_len;
 		}
+		else
+			i++;
 	}
 	free(matched_word);
 
