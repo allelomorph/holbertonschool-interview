@@ -104,6 +104,12 @@ Practice interview question originally appearing as task [12. Pascal's Triangle]
 ### [(504) 0x20. RegEx](./0x20-regex/)
 Practice interview question not appearing elsewhere in the curriculum. Building simple regular expression matching algorithm that only supports `.` and `*` syntax.
 
+### [(506) 0x21. Substring with concatenated words](./0x21-substring/)
+Practice interview question not appearing elsewhere in the curriculum. Finding substrings matching any possible concatenations of a set of words.
+
+### [(501) 0x22. Prime Game](./0x22-primegame/)
+Practice interview question not appearing elsewhere in the curriculum. Simulating a game between two players where prime numbers and their multiples are removed from a list.
+
 ---
 
 ## Student
