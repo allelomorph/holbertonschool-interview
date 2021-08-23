@@ -31,7 +31,7 @@ Write a function that finds all the possible substrings containing a list of wor
 * All words in the array `words` are the same length
 * A valid substring of `s` is the concatenation of each word in `words` exactly once and without any intervening characters
 
-File(s): [`substring.c`](./substring.c)
+File(s): [`substring.c`](./substring.c)\
 Compiled: `gcc -Wall -Wextra -Werror -pedantic main.c substring.c`
 
 ---
