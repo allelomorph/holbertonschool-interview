@@ -11,12 +11,12 @@ def findPrimesToN(n):
         n (int): upper bound on list of primes returned
 
     Return:
-        primes (list) of (int): list of primes to n
+        primes (list) of (int): list of primes to n, or
+        (None): on failure
 
     """
 
     if (type(n) is not int or n < 0):
-        print("Invalid parameter n:{}".format(n))
         return None
 
     # logically primes should be a set, but we want it to remain ordered
@@ -51,11 +51,9 @@ def isWinner(x, nums):
     """
     if (type(nums) is not list or not all([type(n) is int for n in nums]) or
             not all([n > -1 for n in nums])):
-        print("Invalid parameter nums:{}".format(nums))
         return None
 
     if (type(x) is not int or x != len(nums)):
-        print("Invalid parameter x:{}".format(x))
         return None
 
     nums.sort()
@@ -72,7 +70,10 @@ def isWinner(x, nums):
                 prime_ct += 1
             else:
                 break
-        # does Ben always win on an even number of primes?
+        # Since all multiples of a prime are removed when a player chooses,
+        # primes are the only meaningful strategic units. Therefore if Maria
+        # always goes first, she wins games with an odd number of primes from
+        # 2 to n, and Ben will win games with an even number.
         if prime_ct % 2 == 0:
             Ben_wins += 1
         else:
@@ -85,6 +86,32 @@ def isWinner(x, nums):
     else:
         return None
 
+
+'''
+FYI: Pythonic Sieve of Eratosthenes
+
+https://stackoverflow.com/questions/2068372/
+    fastest-way-to-list-all-primes-below-n/3035188#3035188
+
+def primes(n):
+    """ Returns  a list of primes < n """
+    sieve = [True] * n
+    for i in range(3, int(n**0.5) + 1, 2):
+        if sieve[i]:
+            sieve[i * i::2 * i] = [False] * ((n - i * i - 1) // (2 * i) + 1)
+    return [2] + [i for i in range(3, n, 2) if sieve[i]]
+
+Modified to include n in range:
+def _primes(n):
+    """ Returns  a list of primes <= n """
+    sieve = [True] * (n + 1)
+    for i in range(3, int((n + 1)**0.5) + 1, 2):
+        if sieve[i]:
+            sieve[i * i::2 * i] = [False] * (((n + 1) - i * i - 1) //
+                                             (2 * i) + 1)
+    return [2] + [i for i in range(3, n + 1, 2) if sieve[i]]
+
+'''
 
 """
 Primes to 10000:
