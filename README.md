@@ -3,6 +3,46 @@
 ## Description
 Interview practice component of the Holberton school 2nd year curriculum, mostly consisting of content originally appearing as advanced tasks in the core curriculum. One directory and one task per project.
 
+## General requirements
+
+### C
+* Compilation conditions:
+  * Ubuntu 14.04 LTS
+  * gcc 4.8.4
+  * flags `-Wall -Werror -Wextra -pedantic`
+* Compliance with linters:
+  * [betty-style](https://github.com/holbertonschool/Betty/blob/master/betty-style.pl)
+  * [betty-doc](https://github.com/holbertonschool/Betty/blob/master/betty-doc.pl)
+* Test mains will typically not be in same directory as the task solutions, add `-I.` to `gcc` flags to allow test mains to include headers from main directory
+
+### Python
+* Interpreter conditions:
+  * Ubuntu 14.04 LTS
+  * python3 (version 3.4.3)
+* First line of executable scripts wiil be `#!/usr/bin/python3`
+* Compliance with linter:
+  * `pep8` (version 1.7.*) (now known as `pycodestyle`)
+* Docstrings are expected to follow the [Google style guide](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html):
+  * Per module (`python3 -c 'print(__import__("my_module").__doc__)'`)
+  * Per class (`python3 -c 'print(__import__("my_module").MyClass.__doc__)'`)
+  * Per function
+    * both inside a class (`python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'`)
+    * and outside a class (`python3 -c 'print(__import__("my_module").my_function.__doc__)'`)
+* Test scripts will typically not be in same directory as the task solutions, use `export PYTHONPATH='.'` before running test scripts from project directory to allow includes
+* Unit tests will be required on some projects:
+  * using the [unittest module](https://docs.python.org/3.4/library/unittest.html#module-unittest)
+  * located in a `tests/` folder, with a file structure mimicing that of your project, but with a `test_` prefix added to all file/directory names
+  * tests should be capable of being run with `python3 -m unittest discover tests`, or individually per file with `python3 -m unittest <test file>`
+
+### Javascript
+* Interpreter conditions:
+  * Ubuntu 14.04 LTS
+  * Node 10.x
+    * with `request` module
+* First line of executable scripts wiil be `#!/usr/bin/node`
+* Compliance with linter:
+  * `semistandard` (version 16.0.*)
+
 ---
 
 ### [(498) 0x00-lockboxes](./0x00-lockboxes/)
